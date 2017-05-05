@@ -76,10 +76,10 @@ namespace GMCluster
 	[BaseType (typeof (NSObject))]
 	interface GMUClusterIconGenerator
 	{
-		// @required -(UIImage *)iconForSize:(NSUInteger)size;
+		// @required -(UIImage *)iconForCluster:(id<GMUCluster>)cluster;
 		[Abstract]
-		[Export ("iconForSize:")]
-		UIImage IconForSize (nuint size);
+		[Export ("iconForCluster:")]
+		UIImage IconForCluster (IGMUCluster cluster);
 	}
 
 	interface IGMUClusterIconGenerator { }
@@ -169,24 +169,6 @@ namespace GMCluster
 		// -(void)cluster;
 		[Export ("cluster")]
 		void Cluster ();
-	}
-
-
-	// @interface GMUDefaultClusterIconGenerator : NSObject <GMUClusterIconGenerator>
-	[BaseType (typeof (NSObject))]
-	interface GMUDefaultClusterIconGenerator : GMUClusterIconGenerator
-	{
-		// -(instancetype _Nonnull)initWithBuckets:(NSArray<NSNumber *> * _Nonnull)buckets;
-		[Export ("initWithBuckets:")]
-		IntPtr Constructor (NSNumber [] buckets);
-
-		// -(instancetype _Nonnull)initWithBuckets:(NSArray<NSNumber *> * _Nonnull)buckets backgroundImages:(NSArray<UIImage *> * _Nonnull)backgroundImages;
-		[Export ("initWithBuckets:backgroundImages:")]
-		IntPtr Constructor (NSNumber [] buckets, UIImage [] backgroundImages);
-
-		// -(UIImage * _Nonnull)iconForSize:(NSUInteger)size;
-		[Export ("iconForSize:")]
-		UIImage IconForSize (nuint size);
 	}
 
 	// @interface GMUDefaultClusterRenderer : NSObject <GMUClusterRenderer>
