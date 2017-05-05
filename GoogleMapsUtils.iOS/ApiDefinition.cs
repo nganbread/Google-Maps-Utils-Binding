@@ -98,6 +98,12 @@ namespace GMCluster
 		[Abstract]
 		[Export ("update")]
 		void Update ();
+		
+		
+		// @required -(void)updateClusterIcons;
+		[Abstract]
+		[Export ("updateClusterIcons")]
+		void UpdateClusterIcons ();
 	}
 
 	interface IGMUClusterRenderer { };
