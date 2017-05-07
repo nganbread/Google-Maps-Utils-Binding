@@ -115,11 +115,11 @@ namespace GMCluster
 	{
 		// @optional -(void)clusterManager:(GMUClusterManager * _Nonnull)clusterManager didTapCluster:(id<GMUCluster> _Nonnull)cluster;
 		[Export ("clusterManager:didTapCluster:")]
-		void DidTapCluster (GMUClusterManager clusterManager, IGMUCluster cluster);
+		bool DidTapCluster (GMUClusterManager clusterManager, IGMUCluster cluster);
 
 		// @optional -(void)clusterManager:(GMUClusterManager * _Nonnull)clusterManager didTapClusterItem:(id<GMUClusterItem> _Nonnull)clusterItem;
 		[Export ("clusterManager:didTapClusterItem:")]
-		void DidTapClusterItem (GMUClusterManager clusterManager, IGMUClusterItem clusterItem);
+		bool DidTapClusterItem (GMUClusterManager clusterManager, IGMUClusterItem clusterItem);
 	}
 
 	interface IGMUClusterManagerDelegate { }
